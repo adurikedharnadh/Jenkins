@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-        NEW_ VERSION= '1.3.0'
+        NEW_VERSION= '1.3.0'
         SERVER_CREDENTIALS= credentials('SERVER_CREDENTIALS_user')
     }
     stages{
