@@ -1,9 +1,15 @@
 pipeline{
     agent any
+    environment{
+        NEW_ VERSION= '1.3.0'
+        SERVER_CREDENTIALS= credentials('SERVER_CREDENTIALS_user')
+    }
     stages{
         stage('build'){
             steps{
                 echo "This is a sample building block"
+                echo "Building version is ${NEW_VERSION}"
+                echo "The AWS key is ${SERVER_CREDENTIALS_user}"
             }
             
         }
@@ -21,7 +27,7 @@ pipeline{
         stage('deploy'){
             when{
                 expression{
-                    env.BRANCH_NAME == "main"
+                    BRANCH_NAME == "main"
                 }
             }
             steps{
