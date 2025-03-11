@@ -9,7 +9,7 @@ pipeline{
             steps{
                 echo "This is a sample building block"
                 echo "Building version is ${NEW_VERSION}"
-                echo "The AWS key is ${SERVER_CREDENTIALS_user}"
+                echo "The AWS key is ${SERVER_CREDENTIALS}"
             }
             
         }
@@ -32,6 +32,7 @@ pipeline{
             }
             steps{
                 echo "Here we are deploying the application "
+                echo "The AWS key is ${SERVER_CREDENTIALS_PSW}"
             }
             
         }
