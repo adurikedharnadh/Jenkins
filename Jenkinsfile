@@ -5,9 +5,9 @@ pipeline{
         SERVER_CREDENTIALS= credentials('SERVER_CREDENTIALS_user')
     }
     parameters{
-        string(name : "VERSION1", defaultvalue: "1.0.0", description : "This is used to mention the version details")
+        string(name : "VERSION1", defaultValue: "1.0.0", description : "This is used to mention the version details")
         choice(name : 'VERSION', choices: ['1.0.2', '1.4.3','2.4.6'], description:'')
-        booleanParam(name: 'executeTests', defaultvalue: true, description: '')
+        booleanParam(name: 'executeTests', defaultValue: true, description: '')
         
     }
     stages{
