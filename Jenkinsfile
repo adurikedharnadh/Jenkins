@@ -8,16 +8,28 @@ pipeline{
             
         }
         stage('test'){
+            when{
+                expression{
+                    env.BRANCH_NAME == "dev" || BRANCH_NAME == "Feature"
+                }
+            }
             steps{
                 echo "This is testing the application"
             }
             
         }
         stage('deploy'){
+            when{
+                expression{
+                    BRANCH_NAMR == "main"
+                }
+            }
             steps{
                 echo "Here we are deploying the application "
             }
             
         }
     }
+    
+    
 }
