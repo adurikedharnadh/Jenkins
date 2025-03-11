@@ -21,7 +21,7 @@ pipeline{
         stage('deploy'){
             when{
                 expression{
-                    BRANCH_NAMR == "main"
+                    BRANCH_NAME == "main"
                 }
             }
             steps{
