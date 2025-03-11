@@ -10,6 +10,7 @@ pipeline{
                 echo "This is a sample building block"
                 echo "Building version is ${NEW_VERSION}"
                 echo "The AWS key is ${SERVER_CREDENTIALS}"
+                sh "mvn clean install"
             }
             
         }
